@@ -51,7 +51,9 @@ if (SQLite3_FIND_VERSION AND _SQLITE3_VERSION)
 endif (SQLite3_FIND_VERSION AND _SQLITE3_VERSION)
 
 include(FindPackageHandleStandardArgs)
-find_package_handle_standard_args(SQLite3 DEFAULT_MSG SQLITE3_LIBRARIES SQLITE3_INCLUDE_DIRS)
+find_package_handle_standard_args(SQLite3
+  REQUIRED_VARS SQLITE3_LIBRARIES SQLITE3_INCLUDE_DIRS
+  VERSION_VAR ${SQLite3_VERSION})
 
 # show the SQLITE3_INCLUDE_DIRS and SQLITE3_LIBRARIES variables only in the advanced view
 mark_as_advanced(SQLITE3_INCLUDE_DIRS SQLITE3_LIBRARIES)

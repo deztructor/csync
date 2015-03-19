@@ -25,7 +25,7 @@ find_path(CMOCKA_INCLUDE_DIR
     NAMES
         cmocka.h
     PATHS
-        ${CMOCKA_ROOT_DIR}/include
+        ${CMOCKA_ROOT_DIR}/lib
 )
 
 find_library(CMOCKA_LIBRARY
@@ -43,7 +43,9 @@ if (CMOCKA_LIBRARY)
 endif (CMOCKA_LIBRARY)
 
 include(FindPackageHandleStandardArgs)
-find_package_handle_standard_args(CMocka DEFAULT_MSG CMOCKA_LIBRARIES CMOCKA_INCLUDE_DIR)
+find_package_handle_standard_args(CMocka
+  REQUIRED_VARS CMOCKA_LIBRARIES CMOCKA_INCLUDE_DIR
+  VERSION_VAR ${CMOKA_VERSION})
 
 # show the CMOCKA_INCLUDE_DIR and CMOCKA_LIBRARIES variables only in the advanced view
 mark_as_advanced(CMOCKA_INCLUDE_DIR CMOCKA_LIBRARIES)
