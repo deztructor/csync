@@ -1,0 +1,8 @@
+.*
+*.swp
+*~$
+build*
+cscope.*
+tags
+*~
+*.kdev4
